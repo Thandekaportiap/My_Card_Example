@@ -9,3 +9,17 @@
   align-items: center;
   justify-content: center;
 }
+
+.firstDiv {
+  background: url("./assets/house.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: right;
+}
+
+.icon {
+  position: absolute;
+  left: 60%;
+  top: 12%;
+}
