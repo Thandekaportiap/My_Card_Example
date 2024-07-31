@@ -4,18 +4,19 @@ import { FaHeart } from "react-icons/fa";
 import { useState } from "react";
 
 const imageComp = () =>{
-    const [color, setColor ] = useState("")
+    const [color, setColor ] = useState("black")
 
 
-    const changeColor = () => {
-        setColor( <FaHeart/> )
+    const changeColor = (event) => {
+        event.prevent
+        setColor( "red" )
     }
 
 
     return (
         <>
         
-            <FaRegHeart size={40} className="icon" onClick={<FaHeart/>}/>
+            <FaHeart size={40} className="icon" style={{color:color}} onClick={changeColor}/>
         </>
     )
 }

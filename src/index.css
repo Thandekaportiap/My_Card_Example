@@ -11,9 +11,7 @@
 }
 
 .firstDiv {
-  background: url("./assets/house.jpg");
   background-size: cover;
-  background-position: center;
   display: flex;
   justify-content: right;
 }
@@ -23,3 +21,4 @@
   left: 60%;
   top: 12%;
 }
+

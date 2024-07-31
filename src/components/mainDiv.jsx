@@ -16,6 +16,7 @@ const mainDiv = () =>{
         <div className="firstDiv" style={{
              width:"100%",
              height: "40%",
+             backgroundImage:`url(${require("../assets/house.jpg")})`,
              borderRadius: "6px 6px 0 0",
         }}> <ImageComp /> </div>
 
