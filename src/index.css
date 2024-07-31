@@ -1,5 +1,11 @@
 #root {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
   background: rgba(128, 128, 128, 0.158);
   width: 100vw;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
