@@ -1,5 +1,8 @@
 import React from "react";
 import ImageComp from "./imageComp";
+import Section1 from "./section1";
+import Section2 from "./section2";
+import Section3 from "./section3";
 
 
 const mainDiv = () =>{
@@ -7,8 +10,7 @@ const mainDiv = () =>{
         <>
         <div style={{
         width:"30%",
-        height: "90vh",
-        background: "red",
+        height: "80vh",
         borderRadius: "15px",
         boxShadow: "0 4px 8px 4px grey"
       }}>
@@ -23,21 +25,23 @@ const mainDiv = () =>{
         <div style={{
            width:"100%",
            height: "25%",
-           background: "yellow",
-        }}></div>
+        }}>
+         <Section1/>
+         </div>
 
         <div style={{
            width:"100%",
-           height: "15%",
-           background: "violet",
-        }}><hr/></div>
+           height: "10%",
+        }}><hr/>
+        <Section2/>
+        </div>
 
         <div style={{
            width:"100%",
            height: "20%",
-           background: "blue",
+           background: "#E5E4E2",
            borderRadius: "0 0 6px 6px",
-        }}><hr/>
+        }}><hr/> <Section3/>
         </div>
 
       </div>
