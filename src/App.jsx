@@ -60,8 +60,49 @@ let housesForSale = [
     bedrooms: 3,
     realtorName: "Kevin DeSouza",
     realtorPhone: "011 897 8458"
-  }
+  },
+  {
+    image:"https://images.pexels.com/photos/24800152/pexels-photo-24800152/free-photo-of-detached-house-with-a-lawn.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    type:"COUNTRY  HOUSE ",
+    age: "17Y OLD",
+    price:"R2 000 000",
+    address:"234 Ouk avenue",
+    bathrooms: 3,
+    bedrooms: 3,
+    realtorName: "Kevin DeSouza",
+    realtorPhone: "011 897 8458"
+  },
+  
+  
 ]
+
+
+
+// localStorage.setItem("houseLists" , JSON.stringify(housesForSale))
+// let localData = localStorage.getItem("houseList")
+// localStorage.removeItem("l");
+
+const handleAdd = () => {
+  let localData = localStorage.getItem("houseLists");
+ let newList = localData ? JSON.parse(localData) : {};
+ newList.push(house)
+  localStorage.setItem("houseLists", JSON.stringify(newList))
+}
+handleAdd()
+
+
+const handleRead = () => {
+  
+}
+
+const handleUpdate = () => {
+  
+}
+
+const handleDelete = () => {
+  
+}
+
 
   return (
     <>
