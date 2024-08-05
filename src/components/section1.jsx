@@ -1,7 +1,7 @@
 import React from "react";
 
 const section1 = ({price,type,age,address}) =>{
-    console.log(price)
+    // console.log(price)
 
     return(
         <>

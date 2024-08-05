@@ -1,20 +1,13 @@
 import { useState } from 'react'
 import MainDiv from './components/mainDiv'
 import Statevar from './components/statevar';
-
+import TestingFun from './components/testingFunctions';
 
 import './App.css'
 
 function App() {
  
-  // localStorage.setItem("myCat", "Tom");
-  localStorage.setItem("number", 21);
-  localStorage.setItem("boolean", true);
- let myFavoratePlaylist =  { artist:"kygo", song:"cut your teeth", artist:"Alan Walker", song:"Lily"};
-localStorage.setItem("myPlaylist", JSON.stringify(myFavoratePlaylist) )
-let myArray = [2,5,87,434,4,88,90,70]
-localStorage.setItem("array" , JSON.stringify(myArray))
-
+  
 let house = {
   image:"src/assets/house.jpg",
   type:"DETACHED HOUSE",
@@ -76,23 +69,69 @@ let housesForSale = [
   
 ]
 
+let bookTable = [
+  
+  {
+  isbm:	979,
+  title: "Baby Driver",
+   no_of_pages: 1240,
+   edition: "1st edition",
+   publisher: "Micca Books",
+   coverDesigner: "Solo Sakoa",
+   price: "R700",
+   editer: "Onezwa Dlamin",
+   format: "PDF",
+   relesedate: "17-Aug-10",
+  },
+  {
+    
+    isbm:	985,
+     title: "Beekeeper",
+     no_of_pages: 720,
+     edition: "1st edition",
+     publisher: "Marvel",
+     coverDesigner: "Jason Dhlomo",
+     price: "R500",
+     editer: "Lawson Tadai",
+     format: "PDF",
+     relesedate: "13-Jun-19"
+    },
+    {
+      isbm:	799,
+       title: "The Room",
+       no_of_pages: 512,
+       edition: "1st edition",
+       publisher: "AW Books",
+       coverDesigner: "Simlindile Dlamin",
+       price: "R430",
+       editer: "Ntai Kgomotso",
+       format: "PDF",
+       relesedate: "30-May-20",
+      }
+]
 
+localStorage.setItem("booktable" , JSON.stringify(bookTable))
+let bookList = []
 
-// localStorage.setItem("houseLists" , JSON.stringify(housesForSale))
-// let localData = localStorage.getItem("houseList")
-// localStorage.removeItem("l");
-
-const handleAdd = () => {
+const handleAdd = (arr) => {
   let localData = localStorage.getItem("houseLists");
  let newList = localData ? JSON.parse(localData) : {};
- newList.push(house)
+ newList.push(arr)
   localStorage.setItem("houseLists", JSON.stringify(newList))
 }
-handleAdd()
+//  handleAdd(house)
 
 
 const handleRead = () => {
-  
+  let localData = localStorage.getItem("booktable");
+  let newList = localData ? JSON.parse(localData) : [];
+return (
+  <ul>
+    {newList.map(item => (
+      <li key={item}>{item.price}</li>
+    ))}
+  </ul>
+);
 }
 
 const handleUpdate = () => {
@@ -104,15 +143,17 @@ const handleDelete = () => {
 }
 
 
+
   return (
     <>
    
    <MainDiv accommodation={house}/>
-   <MainDiv accommodation={housesForSale[0]}/>
+   {/* <MainDiv accommodation={housesForSale[0]}/>
    <MainDiv accommodation={housesForSale[1]}/>
-   <MainDiv accommodation={housesForSale[2]}/>
-     
-    {/* <Statevar /> */}
+   <MainDiv accommodation={housesForSale[2]}/>  */}
+   {handleRead()}
+   <TestingFun/>
+    
     </>
   )
 }

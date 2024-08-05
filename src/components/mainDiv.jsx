@@ -6,7 +6,7 @@ import Section3 from "./section3";
 
 
 const mainDiv = ({accommodation}) =>{
-console.log(accommodation.price)
+// console.log(accommodation.price)
 
     return(
         <>
