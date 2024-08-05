@@ -2,6 +2,8 @@ import { useState } from 'react'
 import MainDiv from './components/mainDiv'
 import Statevar from './components/statevar';
 import TestingFun from './components/testingFunctions';
+import AddBook from './components/addBook';
+import DisplayBook from './components/displayBooks';
 
 import './App.css'
 
@@ -128,11 +130,12 @@ const handleRead = () => {
 return (
   <ul>
     {newList.map(item => (
-      <li key={item}>{item.price}</li>
+      <li key={item.isbm}>{item.price}</li>
     ))}
   </ul>
 );
 }
+
 
 const handleUpdate = () => {
   
@@ -153,6 +156,8 @@ const handleDelete = () => {
    <MainDiv accommodation={housesForSale[2]}/>  */}
    {handleRead()}
    <TestingFun/>
+   <AddBook book={bookTable[0]}/>
+   <DisplayBook />
     
     </>
   )
